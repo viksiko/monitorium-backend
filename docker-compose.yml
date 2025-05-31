@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:17s
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PWD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    container_name: backend_app
+    restart: always
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    ports:
+      - "${API_PORT}:${API_PORT}"
+    command: ["sh", "-c", "npx prisma migrate deploy && node dist/main"]
+
+volumes:
+  postgres_data:
