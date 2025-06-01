@@ -3,6 +3,45 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true
+  },
+  "projects": {
+    "filter": {
+      "type": "library",
+      "root": "libs/filter",
+      "entryFile": "index",
+      "sourceRoot": "libs/filter/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/filter/tsconfig.lib.json"
+      }
+    },
+    "interceptor": {
+      "type": "library",
+      "root": "libs/interceptor",
+      "entryFile": "index",
+      "sourceRoot": "libs/interceptor/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/interceptor/tsconfig.lib.json"
+      }
+    },
+    "middleware": {
+      "type": "library",
+      "root": "libs/middleware",
+      "entryFile": "index",
+      "sourceRoot": "libs/middleware/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/middleware/tsconfig.lib.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    }
   }
 }

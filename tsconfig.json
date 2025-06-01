@@ -16,6 +16,32 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@shared/filter": [
+        "libs/filter/src"
+      ],
+      "@shared/filter/*": [
+        "libs/filter/src/*"
+      ],
+      "@shared/interceptor": [
+        "libs/interceptor/src"
+      ],
+      "@shared/interceptor/*": [
+        "libs/interceptor/src/*"
+      ],
+      "@shared/middleware": [
+        "libs/middleware/src"
+      ],
+      "@shared/middleware/*": [
+        "libs/middleware/src/*"
+      ],
+      "@shared/schema": [
+        "libs/schema/src"
+      ],
+      "@shared/schema/*": [
+        "libs/schema/src/*"
+      ]
+    }
   }
 }
