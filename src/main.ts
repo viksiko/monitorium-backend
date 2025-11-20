@@ -5,9 +5,10 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
-    // Использование middleware
+    // Использование middleware, interceptors
     app.useGlobalFilters(new HttpExceptionFilter());
     app.useGlobalInterceptors(new TransformInterceptor());
+
     // Запуск приложения
     await app.listen(process.env.API_PORT as string);
 }

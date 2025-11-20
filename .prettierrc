@@ -7,5 +7,5 @@
     "arrowParens": "always",
     "singleAttributePerLine": true,
     "jsxSingleQuote": false,
-    "tabWidth": 4,
+    "tabWidth": 4
 }

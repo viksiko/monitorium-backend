@@ -1,4 +1,3 @@
-import { LoggerMiddleware } from "./logger.middleware";
+import { LoggerMiddleware } from './logger.middleware';
 
 export { LoggerMiddleware };
-

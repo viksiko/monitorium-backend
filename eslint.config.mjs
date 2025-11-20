@@ -1,33 +1,34 @@
-// @ts-check
+// eslint.config.js
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import js from '@eslint/js';
+import ts from 'typescript-eslint';
 
-export default tseslint.config(
-  // {
-  //   ignores: ['eslint.config.mjs'],
-  // },
-  // eslint.configs.recommended,
-  // ...tseslint.configs.recommendedTypeChecked,
-  // eslintPluginPrettierRecommended,
+export default ts.config(
+  {
+    ignores: ['dist/**', 'node_modules/**', 'eslint.config.js'],
+  },
+  js.configs.recommended,
+  ...ts.configs.recommended,
   {
     languageOptions: {
       globals: {
         ...globals.node,
         ...globals.jest,
       },
-      ecmaVersion: 6,
+      ecmaVersion: 2022,
       sourceType: 'module',
       parserOptions: {
-        projectService: true,
+        project: './tsconfig.json',
         tsconfigRootDir: import.meta.dirname,
       },
     },
   },
   {
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-floating-promises': 'warn',
-      '@typescript-eslint/no-unsafe-argument': 'warn'
+      '@typescript-eslint/no-unsafe-argument': 'warn',
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
     },
   },
 );
