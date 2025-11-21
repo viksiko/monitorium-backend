@@ -2,7 +2,7 @@ import { Injectable, NestMiddleware } from '@nestjs/common';
 import { NextFunction, Request, Response } from 'express';
 import * as winston from 'winston';
 
-const logDir = 'logs';
+// const logDir = 'logs';
 
 // Создаем форматтер для логов
 const logFormat = winston.format.combine(
