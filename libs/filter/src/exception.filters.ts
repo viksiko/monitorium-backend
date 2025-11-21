@@ -16,6 +16,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
             exception instanceof HttpException ? exception.getStatus() : 500;
 
         if (exception instanceof Array) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const validationErrors = (exception.getResponse() as any).message;
             return response
                 .status(statusCode ?? HttpStatus.INTERNAL_SERVER_ERROR)

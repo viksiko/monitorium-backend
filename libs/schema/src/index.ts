@@ -1,14 +1,14 @@
-import type {
-    ChangePasswordInput,
-    LoginInput,
-    RegisterInput,
-} from './auth.schema';
 import {
     changePasswordSchema,
     loginSchema,
     oauthSchema,
     registerSchema,
     updateProfileSchema,
+} from './auth.schema';
+import type {
+    ChangePasswordInput,
+    LoginInput,
+    RegisterInput,
 } from './auth.schema';
 
 export {
