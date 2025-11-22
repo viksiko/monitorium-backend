@@ -26,6 +26,8 @@
     "@nestjs/platform-express": "^11.0.1",
     "@prisma/client": "^6.8.2",
     "bcryptjs": "^3.0.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "winston": "^3.17.0",
@@ -85,6 +87,7 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
+      "^@src/(.*)$": "<rootDir>/src/$1",
       "^@app/middleware(|/.*)$": "<rootDir>/libs/middleware/src/$1",
       "^@shared/filter(|/.*)$": "<rootDir>/libs/filter/src/$1",
       "^@shared/interceptor(|/.*)$": "<rootDir>/libs/interceptor/src/$1",
