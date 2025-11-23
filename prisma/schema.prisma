@@ -43,8 +43,18 @@ model User {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  tokens    Token[]
 
   @@map("users")
+}
+
+model Token {
+  token  String   @unique
+  exp    DateTime
+  userId String
+  user   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("tokens")
 }
 
 enum Role {
