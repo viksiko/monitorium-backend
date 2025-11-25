@@ -1,3 +1,4 @@
+import { AuthMiddleware } from './auth.middleware';
 import { LoggerMiddleware } from './logger.middleware';
 
-export { LoggerMiddleware };
+export { LoggerMiddleware, AuthMiddleware };

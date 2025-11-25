@@ -35,6 +35,14 @@ export default ts.config(
             '@typescript-eslint/no-floating-promises': 'warn',
             '@typescript-eslint/no-unsafe-argument': 'warn',
             'no-console': ['warn', { allow: ['warn', 'error'] }],
+            '@typescript-eslint/explicit-function-return-type': [
+                'error',
+                {
+                    allowExpressions: false,
+                    allowTypedFunctionExpressions: true,
+                },
+            ],
+
             'import/order': [
                 'error',
                 {

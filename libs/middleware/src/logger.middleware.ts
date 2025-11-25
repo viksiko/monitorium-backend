@@ -42,7 +42,7 @@ const logger = winston.createLogger({
 
 @Injectable()
 export class LoggerMiddleware implements NestMiddleware {
-    use(req: Request, res: Response, next: NextFunction) {
+    use(req: Request, res: Response, next: NextFunction): void {
         logger.info(`${req.method} ${req.path}`, {
             ip: req.ip,
             userAgent: req.get('User-Agent'),
